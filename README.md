@@ -50,4 +50,4 @@ Ele sabe através do nosso IP, que mostra até o nosso município, aumentando a 
 Se quiser saber mais sobre o assunto de rastreamento de IP, recomendo o [Vídeo do Gabriel Pato](https://m.youtube.com/watch?v=6WZox0-Tc3k).
 ## Como usar o CDN
 Trata-se de um serviço pago, com um serviço semelhante a um provedor de internet. Basta comparar e escolher o que melhor te agrada.
-<!--Proxy Reverso.-->
+<!--Proxy Reverso-->
