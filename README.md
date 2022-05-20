@@ -1,53 +1,69 @@
-Nesse artigo iremos discorrer sobre alguns tipos de conexões, como:<br>
+# Principais Protocolos e Portas de Comunicação
+ Basicamente, uma porta de comunicação é por onde entrará e sairá dados do computador. Elas que organizam o que entra ou não.
+Se não fosse assim, seria uma bagunça. Tudo entraria ao mesmo tempo e a tela ficaria poluída ou não entraria nada em momentos desejados.
+As portas são representadas por números, que vão de 0 a 65.535.
+## Portas Baixas (well known ports):
+São destinadas aos protocolos de serviços, como os servidores e serviços de internet. Vão de 0 a 1023.
+## Portas Altas:
+São destinadas aos clientes (respostas às requisições dos clientes). Vão de 1024 a 65.535.
+## Principais Portas e Protocolos:
+Veremos somente as de serviços, que, além de serem as mais conhecidas, são as mais importantes para quem quer entender sobre Redes.
 <ul>
-<li>Cliente-Servidor;
-<li>Ponta a ponta;
-<li>CDN;
-<li>Proxy Reverso
-</ul>
-
-# Conexão Cliente e Servidor
-## O que é
-A rede internet é regida por quem usa o serviço da rede e por quem provê, ou seja, cliente e servidor, respectivamente.<br><br>
-Um cliente que deseja acessar um site, digita o seu domínio no navegador, este vai até o DNS para procurar o IP do site solicitado para estabelecer o acesso.<br><br>
-Um servidor não é necessariamente uma máquina superpotente muito melhor que máquinas domésticas, mas sim uma máquina especialista em realizar uma função específica.<br><br>
-A interação cliente - servidor é, então, a troca de informações entre duas máquinas (e não necessariamente máquinas físicas).
-Essa interação ocorre em qualquer conexão entre dois dispositivos, onde o cliente quer serviços do servidor e o servidor quer servir o cliente.<br><br>
-Outro exemplo: se eu quero conectar o meu celular a um fone bluetooth, uma rede para a troca de informações será construída. Essa rede é chamada PAN (Personal Area Network), mas também pode e ocorre em LAN, MAN, CAN e WAN.<br><br>
-A conexão mais popular é a conexão de internet (que pode ter qualquer classificação, como já vimos no artigo sobre [Abragências](https://github.com/andersonr-o/Redes/blob/main/abrangencias-de-rede/README.md)). Na WEB, por exemplo, nosso dispositivo envia solicitações ao servidor destino, que nos retorna o que queremos, caso dê tudo certo na rota de comunicação.<br><br>
-Assim se estabelece uma conexão de internet. Obviamente há muitos processos envolvidos em meio a tudo isso, mas essa é a base.<br><br>
-Nosso cliente pode enviar solicitações a um servidor de arquivos, servidor de processos, servidor de terminal, ou a todos eles ao mesmo tempo. Isso é feito através da rede e todas as informações trocadas saem do núcleo de uma máquina e chegam ao núcleo da outra.<br><br>
-Um servidor pode ser cliente de outro servidor. Por exemplo: um servidor de impressão pode ser cliente de um servidor de banco de dados para tomar uma decisão que um cliente solicitou.<br><br>
-Exemplo de uma conexão, de maneira básica, entre um cliente e um servidor:<br><br>
-![cliente-servidor-450](https://user-images.githubusercontent.com/97858145/166838654-9c3fc5aa-c27a-43db-9440-b55fa3bf4818.png)<br><br>
-## Alguns tipos de servidores:
-<ul>
-  <li>Servidor Web &rightarrow; É um servidor que transaciona arquivos com o cliente, assim como o servidor de arquivos, mas somente arquivos web como jpeg, png, html, etc.
-  <li>Servidor de banco de dados &rightarrow; Sua função é fornecer os dados solicitados para o cliente.
-  <li>Servidor de Internet &rightarrow; Gerencia a comunicação das conexões dos usuários conectados na internet. É o servidor de internet que possui proxy para bloquear ou não quem vai acessar o quê.
-</ul>
-
-# Conexão Ponta a Ponta
-É quando não há um servidor bem definidocomo intermediador; não existe um administrador na rede que gerencia todas as máquinas, ou seja, uma máquina conversa com todas as outras livremente. Essa é a principal diferença entre os dois.<br><br>
-Em uma rede ponta a ponta não podemos utilizar serviços complexos como um banco de dados, por exemplo.<br><br>
-Isso acontece porque a rede ponta a ponta tem o objetivo de ser simples e ter baixo custo. Um exemplo são as redes domésticas; não temos ninguém administrando todas as outras máquinas, a princípio.<br><br>
-Por ser mais simples, a rede ponta a ponta torna-se mais vulnerável frente à conexão clinte e servidor.<br><br>
-Se houver conexão entre um dispositivo e outro, temos a conexão ponta a ponta; se houver conexão entre um dispositivo e outros, há a conexão multiponto.<br><br>
-Imagem de um exemplo de conexões ponta a ponta e multiponto:<br><br>
-![ponta-a-ponta](https://user-images.githubusercontent.com/97858145/166844561-ea2567b0-3c45-4a71-8634-5a6faf4c384f.png)
-
-# CDN (Content Delivery Network)
-## Como funciona?
-Ou, em português, Rede de Distribuição de Conteúdo, o CDN funciona, basicamente, como um intermediador entre o cliente e o servidor. Mas para que queremos um intermediador? Ele não iria atrasar a conexão?<br><br>
-Não. O CDN, na verdade, deixa ela mais rápida.<br><br>
-Ele recebe a nossa solicitação ao servidor e o guarda em uma memória temporária. Mas o cliente nem sempre procura o servidor físico mais próximo. O CDN faz isso, diminuindo a latência e aumentando a rapidez da conexão.<br><br>
-Isso se já não existir o mesmo arquivo na memória temporária do seu servidor CDN. Se for o caso, a conexão será mais rápida ainda.<br><br>
-Alguns serviços de CDN, quando buscam a sua solicitação no servidor físico mais próximo, já os guarda em todos os outros CDNs ao redor do mundo, até que sua memória temporária expire.<br><br>
-Essa memória temporária serve enquanto não alteramos a solicitação. Se queremos o conteúdo X do servidor, enviamos a solicitação, e depois querermos mudar para o Y, ele removerá a solicitação do conteúdo X de sua memória temporária e nos dará o Y.<br><br>
-O CDN opera sobre arquivos estáticos, como imagens, vídeos, html, css, javascript e até PDFs.
-## Como o serviço de CDN sabe a nossa localização?
-Ele sabe através do nosso IP, que mostra até o nosso município, aumentando a precisão da localização de um servidor físico próximo.<br><br>
-Se quiser saber mais sobre o assunto de rastreamento de IP, recomendo o [Vídeo do Gabriel Pato](https://m.youtube.com/watch?v=6WZox0-Tc3k).
-## Como usar o CDN
-Trata-se de um serviço pago, com um serviço semelhante a um provedor de internet. Basta comparar e escolher o que melhor te agrada.
-<!--Proxy Reverso-->
+ <li>
+   20/21 &rightarrow; FTP:<br>
+   Serve para a transferência de arquivos de dados. A porta 20 refere-se aos dados e a 21 ao controle desses dados.
+   Podemos ver o FTP quando plugamos o nosso celular na USB do computador, lá aparece a opção de tranferirmos FTP, isto é, arquivos;<br><br>
+ </li>
+ <li>
+   22 &rightarrow; SSH:<br>
+   É um terminal remoto criptografado. Essa porta é acionada quando acessamos outro computador, que não seja o nosso, remotamente;<br><br>
+ </li>
+ <li>
+   23 &rightarrow; Telnet:<br>
+   Trata-se de outro terminal remoto, mas dessa vez descriptografado. Quando ele está descriptografado, significa que todos os usuários da rede podem ginfar a porta;<br><br>
+ </li>
+ <li>
+   25/587 &rightarrow; SMTP:<br>
+   É uma porta de envio de e-mails. A porta 25 não é mais utilizada. Ela foi anulada pelo Comitê Gestor de Internet após negociações com os provedores, devido ao alto número de spammers nela. (não confundir com webmail.);<br><br>
+ </li>
+ <li>
+   53 &rightarrow; DNS:<br>
+   Associa um IP a um nome e um nome a um IP. É como se fosse a agenda do seu celular. Você não precisa saber o número de toda pessoa que for ligar, mas sim saber o seu nome e procurar na agenda. Isso é útil porque todo site é um IP. Graças ao DNS, não precisamos decorá-los;<br><br>
+ </li>
+ <li>
+   67 &rightarrow; DHCP:<br>
+   Distribui as configurações de rede necessárias para a conexão aos dispositivos, tais como IP, gateway, máscara de rede, DNS, etc;<br><br>
+ </li>
+  <li>
+   69 &rightarrow; TFTP:<br>
+   Transfere arquivos simples, como a configuração de arquivos da rede;<br><br>
+  </li>
+  <li>
+   79 &rightarrow; Finger:<br>
+   Transfere informações dos usuários conectados na rede;<br><br>
+  </li>
+  <li>
+   80 &rightarrow; http:<br>
+   Transfere hipertexto (textos com configurações adicionais que o tornam dinâmico);<br><br>
+  </li>
+  <li>
+   110 &rightarrow; pop:<br>
+   Ao contrário do SMTP, o pop é responsável pelo recebimento dos e-mails. Os e-mails recebidos na porta pop somem do servidor depois de um tempo;<br><br>
+  </li>
+  <li>
+   123 &rightarrow; NTP:<br>
+   Sincroniza data e hora entre os dispositivos da rede;<br><br>
+  </li>
+  <li>
+   143 &rightarrow; imap:<br>
+   Igual ao pop, também é responsável pelo recebimento de e-mails, mas o imap guarda-os no servidor.<br>
+   Sendo assim, o usuário pode acessar os mesmos e-mails em outros dispositivos através da sincronização com o servidor;<br><br>
+  </li>
+  <li>
+   161/162 &rightarrow; SNMP:<br>
+   Gerencia as conexões de rede (quantos e quais IPs estão conectados, há quanto tempo, etc);<br><br>
+  </li>
+  <li>
+   443 &rightarrow; https:<br>
+   Faz a mesma coisa que o http, mas o https é criptografado com SSL E TLS.
+  </li>
