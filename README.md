@@ -96,4 +96,4 @@ Para isso, deverá ser utilizado um site auxiliar para descobrir o responsável 
 Um que pode ajudar é o [BlackListAlert](https://www.blacklistalert.org/).<br><br>
 Além de verificar as blacklists, ainda mostra os seus responsáveis. Depois disso, basta anotar e contatá-los.
 Em alguns casos, a retirada só é possível mediante pagamento, mas só acontece em situações mais raras e incomuns.<br><br>
-<!-- IP no DOS e no Bash -->
+<!--IP no DOS e no Bash-->
