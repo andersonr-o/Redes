@@ -28,7 +28,7 @@ Exemplo de uma conexão, de maneira básica, entre um cliente e um servidor:<br>
 </ul>
 
 # Conexão Ponta a Ponta
-É quando não há um servidor bem definidocomo intermediador; não existe um administrador na rede que gerencia todas as máquinas, ou seja, uma máquina conversa com todas as outras livremente. Essa é a principal diferença entre os dois.<br><br>
+É quando não há um servidor bem definido como intermediador; não existe um administrador na rede que gerencia todas as máquinas, ou seja, uma máquina conversa com todas as outras livremente. Essa é a principal diferença entre os dois.<br><br>
 Em uma rede ponta a ponta não podemos utilizar serviços complexos como um banco de dados, por exemplo.<br><br>
 Isso acontece porque a rede ponta a ponta tem o objetivo de ser simples e ter baixo custo. Um exemplo são as redes domésticas; não temos ninguém administrando todas as outras máquinas, a princípio.<br><br>
 Por ser mais simples, a rede ponta a ponta torna-se mais vulnerável frente à conexão clinte e servidor.<br><br>
