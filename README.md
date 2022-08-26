@@ -1,5 +1,5 @@
 # Redes
-Conteúdo sobre o que aprendi de Redes na faculdade e no estágio.
+Conteúdo sobre o que aprendi de Redes na faculdade e no trabalho.
 
 ## Ordem de Leitura das Branchs:
 1. Artigo de [Conexões](https://github.com/andersonr-o/Redes/tree/Conexoes)
